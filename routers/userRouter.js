@@ -8,7 +8,6 @@ const router = express.Router();
 // user signup
 router.post("/", async (req, res, next) => {
   try {
-    console.log(req.body);
     req.body.password = hash(req.body.password);
     const user = await insertUser(req.body);
     user?._id

@@ -11,7 +11,6 @@ const router = express.Router();
 
 router.post("/", async (req, res, next) => {
   try {
-    console.log(req.body);
     const { _id } = req.userinfo;
     req.body.userID = _id;
     const response = await insertTransaction(req.body);
@@ -82,7 +81,6 @@ router.delete("/", async (req, res, next) => {
 router.patch("/", async (req, res, next) => {
   try {
     const { _id, ...rest } = req.body;
-    console.log(_id);
     const response = await editTransaction(_id, rest, { new: true });
     console.log(response, "kkk");
     response?._id
