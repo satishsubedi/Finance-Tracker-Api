@@ -1,0 +1,70 @@
+### Api Testing
+@baseURl = http://localhost:8000/api/v1
+### User
+
+GET {{baseURl}}/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhQGdtYWlsLmNvbSIsImlhdCI6MTcyOTQ0MTY1NCwiZXhwIjoxNzI5NTI4MDU0fQ.5jsPoicZPo7mxxOqwLOpb6NJxuaiAh1weGd8fg_dGU0
+
+### Post user
+POST {{baseURl}}/users
+Content-Type: application/json
+
+{
+    "name": "satish",
+    "email": "sa@gmail.com",
+    "password":"123"
+    
+}
+
+### Logined user
+POST {{baseURl}}/users/login
+Content-Type: application/json
+
+{
+    
+    "email": "sa@gmail.com",
+    "password":"123"
+    
+}
+
+### Transaction
+POST {{baseURl}}/transaction
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhQGdtYWlsLmNvbSIsImlhdCI6MTcyOTYwOTk4NiwiZXhwIjoxNzI5Njk2Mzg2fQ.1NdZv0KcspMYMoXcyvdlEPsQJeqvgOpzzdvnD3U4K2E
+
+{
+    "type":"income",
+    "title":"Festival Bonus",
+    "amount":"500",
+    "tdate":"2024-09-26"
+}
+
+### Get Transaction Details
+GET {{baseURl}}/transaction
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhQGdtYWlsLmNvbSIsImlhdCI6MTczMDA0NTUzNSwiZXhwIjoxNzMwMTMxOTM1fQ.7Fdtl_0E4J3z4a0pKoShe7gGeKkn6H_RZjFyAWpNtxg
+
+### delete transaction details
+DELETE {{baseURl}}/transaction
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhQGdtYWlsLmNvbSIsImlhdCI6MTcyNzk2OTUxNiwiZXhwIjoxNzI4MDU1OTE2fQ.kbxaZHYllR0WzAvessshiBUYPRVYF5s6kIvBmaVlLtg
+
+[
+
+"66f6d3fd924619f25a1f7e16"
+]
+
+### edit Transaction details
+PATCH {{baseURl}}/transaction
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhQGdtYWlsLmNvbSIsImlhdCI6MTcyOTQ0MTY1NCwiZXhwIjoxNzI5NTI4MDU0fQ.5jsPoicZPo7mxxOqwLOpb6NJxuaiAh1weGd8fg_dGU0
+
+
+{
+    "_id":"670bd44bbebe637c8ae1c33b",
+    "amount":"4000",
+    "title":"Prize"
+}
+
+### Get Transaction Details by ID
+GET {{baseURl}}/transaction/6705412bbebe637c8ae1c1fb
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhQGdtYWlsLmNvbSIsImlhdCI6MTczMDA0NTUzNSwiZXhwIjoxNzMwMTMxOTM1fQ.7Fdtl_0E4J3z4a0pKoShe7gGeKkn6H_RZjFyAWpNtxg
