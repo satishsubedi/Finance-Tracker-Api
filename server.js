@@ -17,7 +17,7 @@ app.use("/api/v1/users/login", userRouter); // user for the login data
 app.use("/api/v1/transaction", auth, transactionRouter);
 app.use("api/v1/transaction/id", auth, transactionRouter);
 // app.use("api/v1/transaction", auth, transactionRouter);
-console.log(process.env.JWT_SECRET);
+
 app.get("/", (req, res) => {
   res.json({
     message: "It's Live",

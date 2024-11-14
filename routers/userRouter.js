@@ -1,5 +1,5 @@
 import express from "express";
-import { checkUser, insertUser } from "../models/users/userModel.js";
+import { checkUser, insertUser } from "../models/users/UserModel.js";
 import { comparePassword, hash } from "../utils/bcrypt.js";
 import { jwttoken } from "../utils/jwt.js";
 import { auth } from "../middlewares/authmiddleware.js";

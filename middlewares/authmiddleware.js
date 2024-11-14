@@ -1,6 +1,5 @@
-import e from "express";
 import { decodeToken } from "../utils/jwt.js";
-import { checkUser } from "../models/users/userModel.js";
+import { checkUser } from "../models/users/UserModel.js";
 
 export const auth = async (req, res, next) => {
   try {
